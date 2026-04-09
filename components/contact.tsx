@@ -6,7 +6,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="scroll-mt-17.5 border-t border-[#2a2a2a] bg-[#111111] px-4 py-14 md:px-6 md:py-16"
+      className="scroll-mt-17.5 border-t border-[#2a2a2a] px-4 py-14 md:px-6 md:py-16"
     >
       <div className="mx-auto max-w-7xl">
         <p className="mb-4 text-[11px] tracking-[0.2em] uppercase text-[#00ff88]">
