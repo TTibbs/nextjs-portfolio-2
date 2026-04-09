@@ -20,7 +20,7 @@ export const AboutMe = () => {
             // About
           </p>
           <h2 className="font-heading text-3xl leading-tight font-extrabold tracking-tight sm:text-4xl md:text-6xl">
-            Engineer.
+            Developer.
             <br />
             Pragmatist.
             <br />
@@ -28,7 +28,7 @@ export const AboutMe = () => {
           </h2>
           <div className="mt-6 space-y-5 text-sm leading-7 text-[#a2a2a2] md:leading-8">
             <p>
-              I&apos;m a full-stack engineer with{" "}
+              I&apos;m a full-stack developer with{" "}
               <span className="font-bold text-[#f0f0f0]">3+ years</span> of
               experience turning complex problems into clean, maintainable
               systems.
@@ -52,16 +52,17 @@ export const AboutMe = () => {
           {[
             [
               "Frontend",
-              ["React", "Next.js", "TypeScript", "TailwindCSS", "GraphQL"],
+              [
+                "React",
+                "Next.js",
+                "TypeScript",
+                "TailwindCSS",
+                "React Native",
+                "Expo",
+              ],
             ],
-            [
-              "Backend",
-              ["Node.js", "Go", "PostgreSQL", "Redis", "REST / gRPC"],
-            ],
-            [
-              "Infrastructure",
-              ["AWS", "Docker", "Kubernetes", "Terraform", "GitHub Actions"],
-            ],
+            ["Backend", ["Node.js", "Express", "PostgreSQL", "SQLite", "REST"]],
+            ["Tools & Deployment", ["Vercel", "Render", "Netlify"]],
             [
               "Practices",
               ["TDD", "System Design", "Agile / Scrum", "Code Review"],

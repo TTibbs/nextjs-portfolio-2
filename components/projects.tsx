@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { ProjectCarousel } from "./project-carousel";
 
 export const Projects = () => {
   return (
@@ -59,6 +60,10 @@ export const Projects = () => {
                 <p className="text-[10px] tracking-widest uppercase text-[#a2a2a2]">
                   {project.highlightLabel}
                 </p>
+                <ProjectCarousel
+                  images={project.images ?? []}
+                  projectTitle={project.title}
+                />
               </CardContent>
             </Card>
           ))}
