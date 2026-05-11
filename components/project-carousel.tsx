@@ -21,7 +21,9 @@ export const ProjectCarousel = ({
   images,
   projectTitle,
 }: ProjectCarouselProps) => {
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
+    null,
+  );
 
   const goToPreviousImage = () => {
     setSelectedImageIndex((currentIndex) => {
@@ -73,7 +75,7 @@ export const ProjectCarousel = ({
                   <button
                     type="button"
                     onClick={() => setSelectedImageIndex(index)}
-                    className="relative block w-full cursor-grab active:cursor-grabbing overflow-hidden bg-black/50 focus-visible:ring-2 focus-visible:ring-[#00ff88] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                    className="relative block w-full cursor-zoom-in active:cursor-grabbing overflow-hidden bg-black/50 focus-visible:ring-2 focus-visible:ring-[#00ff88] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                     aria-label={`Open ${projectTitle} screenshot ${index + 1} in modal`}
                   >
                     <div className="relative aspect-16/10 w-full">
@@ -110,7 +112,7 @@ export const ProjectCarousel = ({
           {images.length > 1 ? (
             <button
               type="button"
-              className="absolute left-4 z-10 rounded-full border border-white/20 bg-black/40 p-2 text-white hover:bg-black/70"
+              className="absolute left-4 z-10 rounded-full border border-white/20 bg-black/40 p-2 text-white hover:bg-black/70 cursor-pointer"
               onClick={(event) => {
                 event.stopPropagation();
                 goToPreviousImage();
@@ -124,7 +126,7 @@ export const ProjectCarousel = ({
           {images.length > 1 ? (
             <button
               type="button"
-              className="absolute right-4 z-10 rounded-full border border-white/20 bg-black/40 p-2 text-white hover:bg-black/70"
+              className="absolute right-4 z-10 rounded-full border border-white/20 bg-black/40 p-2 text-white hover:bg-black/70 cursor-pointer"
               onClick={(event) => {
                 event.stopPropagation();
                 goToNextImage();
@@ -137,7 +139,7 @@ export const ProjectCarousel = ({
 
           <button
             type="button"
-            className="absolute top-4 right-4 rounded-full border border-white/20 bg-black/40 p-2 text-white hover:bg-black/70"
+            className="absolute top-4 right-4 rounded-full border border-white/20 bg-black/40 p-2 text-white hover:bg-black/70 cursor-pointer"
             onClick={() => setSelectedImageIndex(null)}
             aria-label="Close image preview"
           >
