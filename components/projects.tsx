@@ -11,7 +11,10 @@ import { ProjectCarousel } from "./project-carousel";
 
 export const Projects = () => {
   return (
-    <section id="work" className="scroll-mt-17.5 px-4 py-14 md:px-6 md:py-16">
+    <section
+      id="work"
+      className="scroll-mt-17.5 bg-[#111111] px-4 py-14 md:px-6 md:py-16"
+    >
       <div className="mx-auto max-w-7xl">
         <p className="mb-4 text-[11px] tracking-[0.2em] uppercase text-[#00ff88]">
           // Selected Work
