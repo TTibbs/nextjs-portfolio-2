@@ -7,7 +7,6 @@ import { Services } from "@/components/services";
 import { Experience } from "@/components/experience";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
-import { CLIPlayground } from "@/components/cli-playground";
 
 export default function Home() {
   return (
@@ -30,8 +29,6 @@ export default function Home() {
         <Experience />
 
         <Contact />
-
-        <CLIPlayground />
       </main>
 
       <Footer />
