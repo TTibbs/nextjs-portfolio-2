@@ -34,7 +34,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        "h-full",
+        "h-full scroll-smooth",
         "antialiased",
         spaceMono.variable,
         geistMono.variable,

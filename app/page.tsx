@@ -10,7 +10,7 @@ import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="bg-[#0a0a0a] font-mono text-[#f0f0f0]">
+    <div id="top" className="bg-[#0a0a0a] font-mono text-[#f0f0f0]">
       <Header />
 
       <main>

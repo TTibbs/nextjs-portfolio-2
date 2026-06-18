@@ -84,7 +84,7 @@ export const ProjectCarousel = ({
                         alt={`${projectTitle} screenshot ${index + 1}`}
                         fill
                         sizes="(min-width: 1024px) 40vw, 90vw"
-                        className="object-contain object-center p-2"
+                        className="object-contain object-center p-2 grayscale group-hover:grayscale-0 transition-all duration-200"
                       />
                     </div>
                   </button>
@@ -152,9 +152,10 @@ export const ProjectCarousel = ({
             <Image
               src={images[selectedImageIndex]}
               alt={`${projectTitle} enlarged screenshot ${selectedImageIndex + 1}`}
-              fill
-              sizes="100vw"
+              width={1000}
+              height={1000}
               className="object-contain object-center"
+              loading="eager"
               priority
             />
           </div>

@@ -13,6 +13,32 @@ type Project = {
 };
 export const projects: Project[] = [
   {
+    type: "Component Library",
+    title: "TT UI",
+    desc: "A component library designed to save time and effort for building complex UIs.",
+    stack: ["React", "Next.js", "TypeScript", "TailwindCSS", "Shadcn/UI"],
+    images: [
+      "https://27weakknzu.ufs.sh/f/wmDx73gLbOVpDBnBj3LyMZLOArkomcvsb2KpE473SjuIW6l1",
+    ],
+    highlight: "shadcn/ui registry",
+    highlightLabel:
+      "Built around reusable components for speed and consistency",
+    link: "https://ui.tibbstech.co.uk",
+  },
+  {
+    type: "Data Manipulation",
+    title: "JSON Transformer",
+    desc: "Transform JSON data without using tokens and prompting agents to do tedious work.",
+    stack: ["React", "Next.js", "TypeScript"],
+    images: [
+      "https://6ncn53suo3.ufs.sh/f/O2huFlpct4n5HijEJ78Iq9jBClJ6oDSOHmsF8QaYdtGAbhf5",
+    ],
+    highlight: "Data Transformation Tool",
+    highlightLabel:
+      "No more prompting agents to do tedious work - just transform your data",
+    link: "https://json-formatter-web-one.vercel.app/",
+  },
+  {
     type: "Website Rebuild",
     title: "SAPUK",
     desc: "Rebuilt the SAPUK website to improve performance, accessibility, and SEO. Includes a custom CMS for managing content amongst other features.",
@@ -51,44 +77,6 @@ export const projects: Project[] = [
     highlight: "API-First",
     highlightLabel: "Built around reusable endpoints",
     link: "https://task-breakdown-api.vercel.app",
-  },
-  {
-    type: "Task Management",
-    title: "Trade Track",
-    desc: "Trade Track is a simple way to keep on top of your jobs without overcomplicating things.",
-    stack: ["React Native", "Expo", "TypeScript", "SQLite", "NativeWind"],
-    images: [
-      "https://s2pw3n9f1f.ufs.sh/f/GNMrlX3JRPgnxfcr4po92SnlIH3MLYJF64GajKpvDgcUZz1y",
-      "https://s2pw3n9f1f.ufs.sh/f/GNMrlX3JRPgnQmlOyBveajRyT2O3JACdEGLFqN0bMB4scmrI",
-      "https://s2pw3n9f1f.ufs.sh/f/GNMrlX3JRPgnphSSvp56BTbkLxjWXns57f0mEUAMO1J4o8DV",
-      "https://s2pw3n9f1f.ufs.sh/f/GNMrlX3JRPgnPEaY1FxLacuZNeh2dVlbmkOg8GS67vT3xwis",
-      "https://s2pw3n9f1f.ufs.sh/f/GNMrlX3JRPgn4hp5fumgbpSYr9KqszZN6xQCAohFi13Gny7u",
-      "https://s2pw3n9f1f.ufs.sh/f/GNMrlX3JRPgnQj3CE1veajRyT2O3JACdEGLFqN0bMB4scmrI",
-      "https://s2pw3n9f1f.ufs.sh/f/GNMrlX3JRPgnhoqKpRbjXdT90NKqtkWMFLUSx51Hc8vEzCBe",
-    ],
-    highlight: "Mobile MVP",
-    highlightLabel: "Designed for daily, on-site use",
-    link: "https://trade-track.vercel.app",
-  },
-  {
-    type: "Template Builder",
-    title: "Snap Template",
-    desc: "A lightweight, developer-friendly drag-and-drop email template builder focused on speed, reusable blocks, and clean output.",
-    stack: [
-      "Node.js",
-      "Express",
-      "TypeScript",
-      "PostgreSQL",
-      "Next.js",
-      "Stripe",
-    ],
-    images: [
-      "https://dxgjph0nw8.ufs.sh/f/fuQKGtDZvoF0YDw9NOt3m4gcCRZTw0PSxMEuVtGW67lhf1Op",
-      "https://dxgjph0nw8.ufs.sh/f/fuQKGtDZvoF0rcP4tJTjW6q39X1vse2Sn5KCiHbltBoxFgfZ",
-    ],
-    highlight: "Builder UX",
-    highlightLabel: "Fast drag-and-drop workflow",
-    link: "https://snap-template.vercel.app",
   },
   {
     type: "Event Management",
@@ -192,22 +180,16 @@ type Experience = {
 };
 export const experience: Experience[] = [
   {
-    date: "2022 — Present",
-    role: "Senior Software Engineer",
-    company: "Helix Systems, London",
-    desc: "Led backend architecture for a data platform serving 200k+ daily active users. Drove a 3× throughput improvement through query optimisation and caching strategy. Mentored 4 junior engineers.",
+    date: "2025 - Present",
+    role: "Full-Stack Developer",
+    company: "SAPUK",
+    desc: "Volunteered to rebuild the SAPUK website to improve performance, accessibility, and SEO. Includes a custom CMS for managing content amongst other features.",
   },
   {
-    date: "2020 — 2022",
-    role: "Full-Stack Engineer",
-    company: "Vantage Digital Agency, Manchester",
-    desc: "Delivered 15+ client projects across e-commerce, SaaS, and media. Introduced CI/CD pipelines that cut deployment time from days to minutes.",
-  },
-  {
-    date: "2018 — 2020",
-    role: "Junior Developer",
-    company: "Orbit Labs, Remote",
-    desc: "Built internal tooling and customer-facing features for a SaaS CRM. First engineering hire — helped establish code review culture and testing standards.",
+    date: "Apr 2025 - May 2025",
+    role: "Freelance Project Consultant",
+    company: "Tech Returners",
+    desc: "Created a full-stack web events platform for Tech Returners, similar to Ticketmaster, with a custom CMS for managing content amongst other features.",
   },
 ];
 

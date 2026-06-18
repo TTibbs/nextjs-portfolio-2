@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { projects } from "./portfolio-data";
 import {
   Card,
@@ -31,17 +32,25 @@ export const Projects = () => {
               className="group relative overflow-hidden rounded-none border border-[#2a2a2a] bg-[#0a0a0a] text-[#f0f0f0] transition-colors hover:bg-[#111111]"
             >
               <span className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-[#00ff88] transition-transform duration-300 group-hover:scale-x-100" />
-              <span className="absolute select-none top-7 right-7 text-lg text-[#2a2a2a] transition-all duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#00ff88]">
-                ↗
-              </span>
+              {project.link ? (
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Visit ${project.title}`}
+                  className="absolute top-7 right-7 z-10 text-sm text-[#5a5a5a] transition-all duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#00ff88] hover:translate-x-1 hover:-translate-y-1 hover:text-[#00ff88]"
+                >
+                  ↗ Go to Project
+                </Link>
+              ) : null}
               <CardHeader>
                 <p className="text-[10px] tracking-widest uppercase text-primary">
                   {project.type}
                 </p>
-                <CardTitle className="font-heading text-2xl">
+                <CardTitle className="font-heading text-2xl text-[#5a5a5a] transition-colors duration-200 group-hover:text-[#00ff88]">
                   {project.title}
                 </CardTitle>
-                <CardDescription className="text-[#666]">
+                <CardDescription className="text-[#5a5a5a] transition-colors duration-200 group-hover:text-[#e7e7e7]">
                   {project.desc}
                 </CardDescription>
               </CardHeader>
@@ -51,7 +60,7 @@ export const Projects = () => {
                     <Badge
                       key={item}
                       variant="outline"
-                      className="rounded-sm border-[#1e3a5f] bg-[#1a1a1a] px-2 py-0.5 text-[10px] tracking-widest text-primary transition-colors duration-200 group-hover:text-primary-foreground"
+                      className="rounded-sm border-[#1e3a5f] bg-[#1a1a1a] px-2 py-0.5 text-[10px] tracking-widest text-[#5a5a5a] transition-colors duration-200 group-hover:text-[#00ff88]"
                     >
                       {item}
                     </Badge>
@@ -60,7 +69,7 @@ export const Projects = () => {
                 <p className="font-heading text-2xl font-extrabold text-[#00ff88]">
                   {project.highlight}
                 </p>
-                <p className="text-[10px] tracking-widest uppercase text-[#a2a2a2]">
+                <p className="text-[10px] tracking-widest uppercase text-[#5a5a5a] transition-colors duration-200 group-hover:text-[#e7e7e7]">
                   {project.highlightLabel}
                 </p>
                 <ProjectCarousel

@@ -28,6 +28,18 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "bi4a1aeb4i.ufs.sh",
       },
+      {
+        protocol: "https",
+        hostname: "27weakknzu.ufs.sh",
+      },
+      {
+        protocol: "https",
+        hostname: "6ncn53suo3.ufs.sh",
+      },
+      {
+        protocol: "https",
+        hostname: "zorlgi4yg6.ufs.sh",
+      },
     ],
   },
 };
