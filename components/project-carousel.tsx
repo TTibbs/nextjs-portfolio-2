@@ -84,7 +84,7 @@ export const ProjectCarousel = ({
                         alt={`${projectTitle} screenshot ${index + 1}`}
                         fill
                         sizes="(min-width: 1024px) 40vw, 90vw"
-                        className="object-contain object-center p-2 grayscale group-hover:grayscale-0 transition-all duration-200"
+                        className="object-contain object-center p-2 grayscale transition-slow group-hover:grayscale-0"
                       />
                     </div>
                   </button>

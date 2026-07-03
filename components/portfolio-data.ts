@@ -1,5 +1,13 @@
-type NavLink = "work" | "about" | "clients" | "experience";
-export const navLinks: NavLink[] = ["work", "about", "clients", "experience"];
+type NavLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+export const navLinks: NavLink[] = [
+  { label: "tt ui", href: "https://ui.tibbstech.co.uk", external: true },
+  { label: "tools", href: "https://tools.tibbstech.co.uk", external: true },
+  { label: "blog", href: "/posts" },
+];
 
 type Project = {
   type: string;

@@ -48,6 +48,7 @@
   --color-pixel-reveal-6: var(--pixel-reveal-6);
   --color-pixel-reveal-7: var(--pixel-reveal-7);
   --color-pixel-reveal-8: var(--pixel-reveal-8);
+  --color-brand-accent: var(--brand-accent);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -101,6 +102,11 @@
   --pixel-reveal-6: oklch(0.15 0.028 163);
   --pixel-reveal-7: oklch(0.25 0.06 169);
   --pixel-reveal-8: oklch(0.18 0.038 166);
+
+  --brand-accent: #00ff88;
+
+  --transition-slow-duration: 500ms;
+  --transition-slow-easing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark {
@@ -156,5 +162,61 @@
     html {
       scroll-behavior: auto;
     }
+  }
+}
+
+@layer utilities {
+  .transition-slow {
+    transition-duration: var(--transition-slow-duration);
+    transition-timing-function: var(--transition-slow-easing);
+    transition-property:
+      color, background-color, border-color, text-decoration-color, fill,
+      stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  }
+
+  .transition-fast {
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property:
+      color, background-color, border-color, text-decoration-color, fill,
+      stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  }
+
+  .stagger-char {
+    color: inherit;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: color;
+    transition-delay: calc(var(--char-index, 0) * 1ms);
+  }
+
+  .stagger-char-stroke {
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition-property: -webkit-text-fill-color, color;
+  }
+
+  .stagger-char-stroke-wrapper {
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    -webkit-text-stroke: 1px #f0f0f0;
+    transition-property: -webkit-text-stroke-color;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .group:hover .stagger-char:not(.stagger-char-stroke),
+  .stagger-group:hover .stagger-char:not(.stagger-char-stroke) {
+    color: var(--brand-accent);
+  }
+
+  .group:hover .stagger-char-stroke {
+    -webkit-text-fill-color: var(--brand-accent);
+    color: var(--brand-accent);
+  }
+
+  .group:hover .stagger-char-stroke-wrapper,
+  .stagger-group:hover .stagger-char-stroke-wrapper {
+    -webkit-text-stroke-color: var(--brand-accent);
   }
 }

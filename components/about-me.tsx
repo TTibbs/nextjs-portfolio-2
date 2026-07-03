@@ -7,6 +7,7 @@ import {
   ItemTitle,
 } from "./ui/item";
 import Link from "next/link";
+import { StaggeredHoverText } from "@/components/staggered-hover-text";
 import { HoverButton } from "./ui/hover-button";
 import { Badge } from "./ui/badge";
 import { Label } from "./ui/label";
@@ -19,12 +20,12 @@ export const AboutMe = () => {
           <p className="mb-4 text-[11px] tracking-[0.2em] uppercase text-[#00ff88]">
             // About
           </p>
-          <h2 className="font-heading text-3xl leading-tight font-extrabold tracking-tight sm:text-4xl md:text-6xl">
-            Developer.
+          <h2 className="stagger-group font-heading text-3xl leading-tight font-extrabold tracking-tight text-white sm:text-4xl md:text-6xl">
+            <StaggeredHoverText text="Developer." startIndex={0} />
             <br />
-            Pragmatist.
+            <StaggeredHoverText text="Pragmatist." startIndex={10} />
             <br />
-            Finisher.
+            <StaggeredHoverText text="Finisher." startIndex={21} />
           </h2>
           <div className="mt-6 space-y-5 text-sm leading-7 text-[#a2a2a2] md:leading-8">
             <p>

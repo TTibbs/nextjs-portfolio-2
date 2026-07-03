@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { StaggeredHoverText } from "@/components/staggered-hover-text";
 import { ContactForm } from "./contact-form";
 import { HoverButton } from "./ui/hover-button";
 
@@ -12,10 +13,10 @@ export const Contact = () => {
         <p className="mb-4 text-[11px] tracking-[0.2em] uppercase text-[#00ff88]">
           // Contact
         </p>
-        <h2 className="font-heading text-3xl leading-tight font-extrabold tracking-tight sm:text-4xl md:text-6xl">
-          Let&apos;s build
+        <h2 className="stagger-group font-heading text-3xl leading-tight font-extrabold tracking-tight text-white sm:text-4xl md:text-6xl">
+          <StaggeredHoverText text="Let's build" startIndex={0} />
           <br />
-          something.
+          <StaggeredHoverText text="something." startIndex={11} />
         </h2>
         <p className="mt-6 mb-4 w-full max-w-2xl text-sm leading-7 text-primary-foreground md:mt-8 md:leading-8">
           Whether you&apos;re hiring for a full-time role or need a specialist

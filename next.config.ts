@@ -40,6 +40,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "zorlgi4yg6.ufs.sh",
       },
+      {
+        protocol: "https",
+        hostname: "media2.dev.to",
+      },
     ],
   },
 };

@@ -2,13 +2,18 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import {
+  TRANSITION_SLOW_EASE,
+  TRANSITION_SLOW_MS,
+  TRANSITION_SLOW_S,
+} from "@/lib/transitions";
 interface PixelRevealCardProps {
   image: string;
   name: string;
   role: string;
   /** Approximate size (in px) of each pixel tile. Smaller = more pixels = denser effect. Default 18. */
   pixelSize?: number;
-  /** Total reveal/reassemble duration in ms. Default 850. */
+  /** Total reveal/reassemble duration in ms. Default matches `.transition-slow`. */
   animationDuration?: number;
 }
 const CARD_W = 320;
@@ -47,7 +52,7 @@ export function PixelRevealCard({
   name,
   role,
   pixelSize = 18,
-  animationDuration = 850,
+  animationDuration = TRANSITION_SLOW_MS,
 }: PixelRevealCardProps) {
   const [hovered, setHovered] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -130,8 +135,8 @@ export function PixelRevealCard({
           : "0 0 0 1px rgba(255,255,255,0.06), 0 12px 40px -12px rgba(0,0,0,0.7)",
       }}
       transition={{
-        duration: 0.4,
-        ease: "easeOut",
+        duration: TRANSITION_SLOW_S,
+        ease: TRANSITION_SLOW_EASE,
       }}
     >
       <div className="absolute inset-0 overflow-hidden rounded-2xl bg-pixel-reveal-fallback">
@@ -152,7 +157,7 @@ export function PixelRevealCard({
           transition={{
             duration: durationS * 0.7,
             delay: hovered ? durationS * 0.25 : 0,
-            ease: "easeOut",
+            ease: TRANSITION_SLOW_EASE,
           }}
         />
 
@@ -167,8 +172,8 @@ export function PixelRevealCard({
                 opacity: hovered ? 1 : 0.92,
               }}
               transition={{
-                duration: 0.4,
-                ease: "easeOut",
+                duration: TRANSITION_SLOW_S,
+                ease: TRANSITION_SLOW_EASE,
               }}
             >
               {name}
@@ -181,9 +186,9 @@ export function PixelRevealCard({
                 opacity: hovered ? 1 : 0.7,
               }}
               transition={{
-                duration: 0.4,
+                duration: TRANSITION_SLOW_S,
                 delay: 0.04,
-                ease: "easeOut",
+                ease: TRANSITION_SLOW_EASE,
               }}
             >
               {role}
@@ -238,7 +243,7 @@ export function PixelRevealCard({
                     delay: hovered
                       ? p.delay * durationS
                       : p.delay * durationS * 0.05,
-                    ease: hovered ? [0.22, 1, 0.36, 1] : [0.4, 0, 0.2, 1],
+                    ease: TRANSITION_SLOW_EASE,
                   }}
                 />
               );

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { StaggeredHoverText } from "@/components/staggered-hover-text";
 import { engagementTypes, services } from "./portfolio-data";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { HoverButton } from "./ui/hover-button";
@@ -21,10 +22,10 @@ export const Services = () => {
           <p className="mb-4 text-[11px] tracking-[0.2em] uppercase text-[#00ff88]">
             // For Clients
           </p>
-          <h2 className="font-heading text-3xl leading-tight font-extrabold tracking-tight sm:text-4xl md:text-6xl">
-            What I can
+          <h2 className="stagger-group font-heading text-3xl leading-tight font-extrabold tracking-tight text-white sm:text-4xl md:text-6xl">
+            <StaggeredHoverText text="What I can" startIndex={0} />
             <br />
-            build for you.
+            <StaggeredHoverText text="build for you." startIndex={10} />
           </h2>
           <ItemGroup className="mt-6 gap-0">
             {services.map((service) => (
@@ -45,22 +46,20 @@ export const Services = () => {
             ))}
           </ItemGroup>
         </div>
-        <Card className="h-fit border-[#2a2a2a] bg-[#0a0a0a]">
+        <Card className="h-fit self-center border-[#2a2a2a] bg-[#0a0a0a]">
           <CardHeader>
             <p className="text-[11px] tracking-[0.2em] uppercase text-[#666]">
               // Engagement types
             </p>
           </CardHeader>
-          <CardContent className="space-y-3">
+          <CardContent className="space-y-3 text-secondary text-sm">
             {engagementTypes.map(({ plan, detail }) => (
               <div
                 key={plan}
-                className="group border border-[#2a2a2a] p-4 transition-colors hover:border-[#00ff88]"
+                className="group border border-[#2a2a2a] p-4 transition-slow hover:border-[#00ff88] flex flex-col gap-2"
               >
-                <p className="font-heading text-base font-bold text-[#f0f0f0] transition-colors group-hover:text-[#00ff88]">
-                  {plan}
-                </p>
-                <p className="text-xs leading-6 text-[#666]">{detail}</p>
+                <StaggeredHoverText text={plan} />
+                <p className="text-xs leading-4 text-[#666]">{detail}</p>
               </div>
             ))}
             <div className="flex justify-center">
