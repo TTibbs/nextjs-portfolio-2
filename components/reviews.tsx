@@ -6,7 +6,7 @@ export const Reviews = () => {
     <section className="px-4 py-14 md:px-6 md:py-16 border-t border-[#2a2a2a] bg-[#111111]">
       <div className="mx-auto max-w-7xl">
         <p className="mb-4 text-[11px] tracking-[0.2em] uppercase text-[#00ff88]">
-          // Testimonials
+          {"// Testimonials"}
         </p>
         <h2 className="font-heading text-3xl leading-tight font-extrabold tracking-tight sm:text-4xl md:text-6xl">
           What my clients say.

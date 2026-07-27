@@ -41,6 +41,7 @@ export default function RootLayout({
         syne.variable,
         "font-mono",
       )}
+      data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col bg-[#0a0a0a]">{children}</body>
     </html>

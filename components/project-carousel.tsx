@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
@@ -25,19 +25,19 @@ export const ProjectCarousel = ({
     null,
   );
 
-  const goToPreviousImage = () => {
+  const goToPreviousImage = useCallback(() => {
     setSelectedImageIndex((currentIndex) => {
       if (currentIndex === null) return currentIndex;
       return (currentIndex - 1 + images.length) % images.length;
     });
-  };
+  }, [images.length]);
 
-  const goToNextImage = () => {
+  const goToNextImage = useCallback(() => {
     setSelectedImageIndex((currentIndex) => {
       if (currentIndex === null) return currentIndex;
       return (currentIndex + 1) % images.length;
     });
-  };
+  }, [images.length]);
 
   useEffect(() => {
     if (selectedImageIndex === null) return;
@@ -55,7 +55,7 @@ export const ProjectCarousel = ({
     window.addEventListener("keydown", onKeyDown);
 
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [selectedImageIndex]);
+  }, [goToNextImage, goToPreviousImage, selectedImageIndex]);
 
   if (!images.length) return null;
 
@@ -78,13 +78,13 @@ export const ProjectCarousel = ({
                     className="relative block w-full cursor-zoom-in active:cursor-grabbing overflow-hidden bg-black/50 focus-visible:ring-2 focus-visible:ring-[#00ff88] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                     aria-label={`Open ${projectTitle} screenshot ${index + 1} in modal`}
                   >
-                    <div className="relative aspect-16/10 w-full">
+                    <div className="relative aspect-[16/7] w-full sm:aspect-16/10">
                       <Image
                         src={image}
                         alt={`${projectTitle} screenshot ${index + 1}`}
                         fill
                         sizes="(min-width: 1024px) 40vw, 90vw"
-                        className="object-contain object-center p-2 grayscale transition-slow group-hover:grayscale-0"
+                        className="object-cover object-top opacity-75 grayscale transition-slow group-hover:opacity-100 group-hover:grayscale-0 sm:object-contain sm:object-center sm:p-2"
                       />
                     </div>
                   </button>

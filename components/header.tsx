@@ -4,7 +4,13 @@ import { contactLinks, navLinks } from "./portfolio-data";
 export const Header = () => {
   return (
     <nav className="sticky top-0 z-50 border-b border-[#2a2a2a] bg-[#0a0a0a]/95 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-end px-4 py-4 md:px-6 md:py-6">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 md:px-6 md:py-6">
+        <Link
+          href="#top"
+          className="font-heading text-sm font-bold tracking-[0.08em] text-[#f0f0f0] uppercase transition-fast hover:text-brand-accent"
+        >
+          Terry Ward
+        </Link>
         <div className="hidden items-center gap-5 md:flex">
           {navLinks.map(({ label, href, external }) => (
             <Link

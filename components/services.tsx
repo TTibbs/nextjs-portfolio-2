@@ -20,13 +20,18 @@ export const Services = () => {
       <div className="mx-auto grid max-w-7xl gap-10 md:gap-14 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
         <div>
           <p className="mb-4 text-[11px] tracking-[0.2em] uppercase text-[#00ff88]">
-            // For Clients
+            {"// For Clients"}
           </p>
           <h2 className="stagger-group font-heading text-3xl leading-tight font-extrabold tracking-tight text-white sm:text-4xl md:text-6xl">
-            <StaggeredHoverText text="What I can" startIndex={0} />
+            <StaggeredHoverText text="Where I can" startIndex={0} />
             <br />
-            <StaggeredHoverText text="build for you." startIndex={10} />
+            <StaggeredHoverText text="be useful." startIndex={12} />
           </h2>
+          <p className="mt-5 max-w-2xl text-sm leading-7 text-[#8a8a8a]">
+            I am a good fit when a project needs both product sense and hands-on
+            engineering: someone to ask the awkward questions, then build the
+            thing properly.
+          </p>
           <ItemGroup className="mt-6 gap-0">
             {services.map((service) => (
               <Item
@@ -40,7 +45,9 @@ export const Services = () => {
                   <ItemTitle className="font-heading text-lg text-[#f0f0f0]">
                     {service.name}
                   </ItemTitle>
-                  <ItemDescription>{service.desc}</ItemDescription>
+                  <ItemDescription className="line-clamp-none text-[#8a8a8a]">
+                    {service.desc}
+                  </ItemDescription>
                 </ItemContent>
               </Item>
             ))}
@@ -49,7 +56,7 @@ export const Services = () => {
         <Card className="h-fit self-center border-[#2a2a2a] bg-[#0a0a0a]">
           <CardHeader>
             <p className="text-[11px] tracking-[0.2em] uppercase text-[#666]">
-              // Engagement types
+              {"// Ways to work together"}
             </p>
           </CardHeader>
           <CardContent className="space-y-3 text-secondary text-sm">
@@ -64,11 +71,11 @@ export const Services = () => {
             ))}
             <div className="flex justify-center">
               <HoverButton>
-                <Link href="#contact">Get a Free Estimate →</Link>
+                <Link href="#contact">Talk through the work →</Link>
               </HoverButton>
             </div>
             <p className="text-center text-[11px] tracking-[0.05em] text-[#666]">
-              Typical response within 24 hours
+              A few sentences about the problem is enough to start.
             </p>
           </CardContent>
         </Card>

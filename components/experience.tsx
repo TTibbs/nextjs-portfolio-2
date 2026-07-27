@@ -8,13 +8,18 @@ export const Experience = () => {
     >
       <div className="mx-auto max-w-7xl">
         <p className="mb-4 text-[11px] tracking-[0.2em] uppercase text-[#00ff88]">
-          // Experience
+          {"// Experience"}
         </p>
         <h2 className="font-heading text-3xl leading-tight font-extrabold tracking-tight sm:text-4xl md:text-6xl">
-          Where I&apos;ve
+          Work with
           <br />
-          been deployed.
+          real edges.
         </h2>
+        <p className="mt-5 max-w-2xl text-sm leading-7 text-[#8a8a8a]">
+          Recent work has mostly sat at the practical end of full-stack
+          development: public websites, admin tools, content workflows, and the
+          bits users notice when they break.
+        </p>
         <div className="mt-8 flex flex-col">
           {experience.map((item) => (
             <div

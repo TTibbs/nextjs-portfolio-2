@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import {
   TRANSITION_SLOW_EASE,
@@ -55,11 +55,6 @@ export function PixelRevealCard({
   animationDuration = TRANSITION_SLOW_MS,
 }: PixelRevealCardProps) {
   const [hovered, setHovered] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const { pixels, cols, rows } = useMemo(() => {
     const cols = Math.ceil(CARD_W / pixelSize);
@@ -196,61 +191,53 @@ export function PixelRevealCard({
           </div>
         </div>
 
-        {/* Pixel layer — client-only to avoid Framer Motion SSR style mismatches */}
+        {/* Pixel layer */}
         <div
           className="absolute inset-0 z-10"
-          style={
-            mounted
-              ? {
-                  display: "grid",
-                  gridTemplateColumns: `repeat(${cols}, 1fr)`,
-                  gridTemplateRows: `repeat(${rows}, 1fr)`,
-                }
-              : undefined
-          }
+          style={{
+            display: "grid",
+            gridTemplateColumns: `repeat(${cols}, 1fr)`,
+            gridTemplateRows: `repeat(${rows}, 1fr)`,
+          }}
           aria-hidden="true"
         >
-          {mounted ? (
-            pixels.map((p) => {
-              const opacity = Math.round(p.baseOpacity * 1000) / 1000;
+          {pixels.map((p) => {
+            const opacity = Math.round(p.baseOpacity * 1000) / 1000;
 
-              return (
-                <motion.span
-                  key={p.id}
-                  className="block"
-                  style={{
-                    backgroundColor: PIXEL_COLORS[p.colorIndex],
-                    willChange: "transform, opacity",
-                  }}
-                  initial={false}
-                  animate={
-                    hovered
-                      ? {
-                          x: p.dx * p.distance,
-                          y: p.dy * p.distance,
-                          opacity: 0,
-                          scale: 0.4,
-                        }
-                      : {
-                          x: 0,
-                          y: 0,
-                          opacity,
-                          scale: 1,
-                        }
-                  }
-                  transition={{
-                    duration: durationS,
-                    delay: hovered
-                      ? p.delay * durationS
-                      : p.delay * durationS * 0.05,
-                    ease: TRANSITION_SLOW_EASE,
-                  }}
-                />
-              );
-            })
-          ) : (
-            <div className="h-full w-full bg-pixel-reveal-fallback" />
-          )}
+            return (
+              <motion.span
+                key={p.id}
+                className="block"
+                style={{
+                  backgroundColor: PIXEL_COLORS[p.colorIndex],
+                  willChange: "transform, opacity",
+                }}
+                initial={false}
+                animate={
+                  hovered
+                    ? {
+                        x: p.dx * p.distance,
+                        y: p.dy * p.distance,
+                        opacity: 0,
+                        scale: 0.4,
+                      }
+                    : {
+                        x: 0,
+                        y: 0,
+                        opacity,
+                        scale: 1,
+                      }
+                }
+                transition={{
+                  duration: durationS,
+                  delay: hovered
+                    ? p.delay * durationS
+                    : p.delay * durationS * 0.05,
+                  ease: TRANSITION_SLOW_EASE,
+                }}
+              />
+            );
+          })}
         </div>
 
         {/* Inner border to keep rounded corners crisp over pixels */}

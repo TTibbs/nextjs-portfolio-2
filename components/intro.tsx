@@ -17,32 +17,32 @@ export const Intro = () => {
               <span className="size-2 rounded-full bg-[#00ff88] animate-pulse" />
               {availabilityLabel}
             </Label>
-            <h1 className="stagger-group font-heading text-4xl leading-[0.95] font-extrabold tracking-tight text-white sm:text-5xl md:text-7xl">
+            <h1
+              aria-label="I build useful software."
+              className="stagger-group font-heading text-4xl leading-[0.95] font-extrabold tracking-tight text-white sm:text-5xl md:text-7xl"
+            >
               <StaggeredHoverText text="I build" startIndex={0} />
               <br />
               <StaggeredHoverText
-                text="things"
+                text="useful"
                 startIndex={7}
                 charClassName="stagger-char-stroke"
                 wrapperClassName="overflow-visible pb-[0.12em] leading-[1.15]"
               />
               <br />
-              <StaggeredHoverText text="that " startIndex={13} />
-              <span className="text-brand-accent">
-                <StaggeredHoverText text="scale." startIndex={18} />
-              </span>
+              <StaggeredHoverText text="software." startIndex={14} />
             </h1>
             <p className="mt-6 max-w-2xl text-sm leading-7 text-[#666] md:mt-8 md:leading-8">
-              Full-stack engineer specialising in high-performance web
-              applications, developer tooling, and systems that hold up under
-              pressure. Based in the UK, remote-friendly.
+              Full-stack developer in the UK, building web apps, developer
+              tools, and practical systems for teams that need clear thinking
+              as much as clean code.
             </p>
             <div className="mt-7 flex flex-wrap gap-2.5 md:mt-8 md:gap-3">
               <HoverButton>
-                <Link href="#work">View My Work →</Link>
+                <Link href="#work">See the work →</Link>
               </HoverButton>
               <HoverButton className="border-[#2a2a2a] bg-transparent text-[#f0f0f0] hover:border-[#00ff88] hover:bg-transparent hover:text-[#00ff88] hover:shadow-[4px_4px_0_#016d4e]">
-                <Link href="#clients">Hire Me For a Project</Link>
+                <Link href="#contact">Start a conversation</Link>
               </HoverButton>
             </div>
           </div>

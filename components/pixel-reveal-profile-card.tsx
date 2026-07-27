@@ -13,6 +13,11 @@ type PixelRevealProfileCardProps = {
   className?: string;
 };
 
+const seededRandom = (seed: number) => {
+  const value = Math.sin(seed * 12.9898) * 43758.5453;
+  return value - Math.floor(value);
+};
+
 export function PixelRevealProfileCard({
   image,
   name,
@@ -41,14 +46,14 @@ export function PixelRevealProfileCard({
 
       const angle = Math.atan2(dy, dx);
 
-      const strength = 40 + Math.random() * 120;
+      const strength = 40 + seededRandom(i + 1) * 120;
 
       return {
         id: i,
         delay: distance * 0.015,
         moveX: Math.cos(angle) * strength,
         moveY: Math.sin(angle) * strength,
-        opacity: 0.7 + Math.random() * 0.3,
+        opacity: 0.7 + seededRandom(i + 101) * 0.3,
       };
     });
   }, [pixelSize]);

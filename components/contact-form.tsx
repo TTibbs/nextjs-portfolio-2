@@ -1,7 +1,6 @@
 "use client";
 
 import { useActionState } from "react";
-import { useEffect, useState } from "react";
 
 import { sendContactEmail } from "@/app/actions/send-contact-email";
 import {
@@ -15,6 +14,7 @@ import {
 import { HoverButton } from "./ui/hover-button";
 import { useFormStatus } from "react-dom";
 import { Loader2 } from "lucide-react";
+import { contactCopy } from "./portfolio-data";
 
 type ContactFormState = {
   status: "idle" | "success" | "error";
@@ -31,19 +31,6 @@ export function ContactForm() {
     sendContactEmail,
     initialContactFormState,
   );
-  const [showMessage, setShowMessage] = useState(false);
-
-  useEffect(() => {
-    if (state.status === "idle") {
-      setShowMessage(false);
-      return;
-    }
-
-    setShowMessage(true);
-    const timeoutId = window.setTimeout(() => setShowMessage(false), 5000);
-
-    return () => window.clearTimeout(timeoutId);
-  }, [state.status, state.message]);
 
   const { pending } = useFormStatus();
 
@@ -98,10 +85,10 @@ export function ContactForm() {
               required
               rows={5}
               className="w-full resize-y border border-[#2a2a2a] bg-transparent px-3 py-2 text-sm text-[#f0f0f0] outline-none transition-colors focus:border-[#00ff88]"
-              placeholder="Tell me about your project."
+              placeholder="A few sentences about the problem, role, or timeline."
             />
             <FieldDescription className="text-[#666]">
-              I usually reply within 24 hours.
+              {contactCopy.responseNote}
             </FieldDescription>
           </FieldContent>
         </Field>
@@ -110,15 +97,15 @@ export function ContactForm() {
           {pending ? (
             <Loader2 className="size-4 animate-spin" />
           ) : (
-            "Send message →"
+            "Send message"
           )}
         </HoverButton>
       </FieldGroup>
 
-      {showMessage && state.status === "error" && (
+      {state.status === "error" && (
         <FieldError className="mt-3 text-[#ff3366]">{state.message}</FieldError>
       )}
-      {showMessage && state.status === "success" && (
+      {state.status === "success" && (
         <p className="mt-3 text-xs tracking-[0.08em] text-[#00ff88]">
           {state.message}
         </p>
