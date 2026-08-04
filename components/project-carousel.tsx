@@ -152,8 +152,8 @@ export const ProjectCarousel = ({
             <Image
               src={images[selectedImageIndex]}
               alt={`${projectTitle} enlarged screenshot ${selectedImageIndex + 1}`}
-              width={1000}
-              height={1000}
+              fill
+              sizes="100vw"
               className="object-contain object-center"
               loading="eager"
               priority

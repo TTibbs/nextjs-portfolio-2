@@ -44,6 +44,18 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "media2.dev.to",
       },
+      {
+        protocol: "https",
+        hostname: "puuij6vvxu.ufs.sh",
+      },
+      {
+        protocol: "https",
+        hostname: "3as7ogjzsi.ufs.sh",
+      },
+      {
+        protocol: "https",
+        hostname: "u8tnikz907.ufs.sh",
+      },
     ],
   },
 };

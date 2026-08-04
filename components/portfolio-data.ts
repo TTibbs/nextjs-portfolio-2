@@ -21,6 +21,62 @@ type Project = {
 };
 export const projects: Project[] = [
   {
+    type: "Career Tool",
+    title: "Evidence Coach",
+    desc: "A career prep app that turns real experience into structured CV evidence, job-target matches, and interview practice.",
+    stack: ["Next.js", "TypeScript", "Supabase", "Gemini", "ElevenLabs"],
+    images: [
+      "/projects/evidence-coach/dashboard.png",
+      "/projects/evidence-coach/evidence-confirmed.png",
+      "/projects/evidence-coach/builder.png",
+      "/projects/evidence-coach/practice-feedback.png",
+    ],
+    highlight: "Evidence bank",
+    highlightLabel: "CV evidence, job matching, and interview practice",
+  },
+  {
+    type: "Learning Platform",
+    title: "Skill Spark",
+    desc: "A family learning platform with a Next.js web app, Express API, shared contracts, and an Expo mobile app.",
+    stack: ["Next.js", "Express", "PostgreSQL", "Expo", "TypeScript"],
+    images: [
+      "https://puuij6vvxu.ufs.sh/f/tweBTAxf69aP1GDuhDTV8RxSWjn4JiIOA3F9NXEZgYGoTMrm",
+      "https://puuij6vvxu.ufs.sh/f/tweBTAxf69aPvy6MfYA3D6icRrqp8wetM0nGlI1XyKhoO52d",
+      "https://puuij6vvxu.ufs.sh/f/tweBTAxf69aPgFBGTZIhrDuxMcWBC83bn15XP0YeSdqavFUo",
+      "https://puuij6vvxu.ufs.sh/f/tweBTAxf69aP2IP6Hr79fVe86h4v9jtOnuBrkSGgw3HE5dlc",
+      "https://puuij6vvxu.ufs.sh/f/tweBTAxf69aPn8FTHmP8sHTWJSgf9vAF0YRdrw3XtmPhaxou",
+    ],
+    highlight: "Monorepo product",
+    highlightLabel: "Web, backend, mobile, contracts, and typed API client",
+  },
+  {
+    type: "Interactive Toolkit",
+    title: "PuzzleKit",
+    desc: "A work-in-progress image puzzle toolkit with a deterministic engine, Canvas renderer, React player, and iframe embed.",
+    stack: ["TypeScript", "React", "Next.js", "Canvas", "Playwright"],
+    images: [
+      "https://3as7ogjzsi.ufs.sh/f/rMyvzSPxuRELhbqWd6RRMjuCk7VeKixH9L5aPcqsGSJYtdTp",
+      "https://3as7ogjzsi.ufs.sh/f/rMyvzSPxuRELAeeVYPdvgwCz7yns8oB2QJPh9xTIjcDMAZfF",
+      "https://3as7ogjzsi.ufs.sh/f/rMyvzSPxuRELvmmLUlBiodgNvwf0nZaPql9R6u2bKtspWSeB",
+      "https://3as7ogjzsi.ufs.sh/f/rMyvzSPxuRELhaNCbSRRMjuCk7VeKixH9L5aPcqsGSJYtdTp",
+      "https://3as7ogjzsi.ufs.sh/f/rMyvzSPxuRELND597Nqc0Pgp7qRkuHmtbIEW4anj5Ad1heZS",
+    ],
+    highlight: "WIP puzzle engine",
+    highlightLabel: "Reusable packages with hosted embed boundaries",
+  },
+  {
+    type: "Client Portal",
+    title: "Patchdrop",
+    desc: "Patchdrop is a website-care request portal for freelancers to manage clients, private links, change requests, and quote approvals.",
+    stack: ["Next.js", "TypeScript", "Supabase", "Stripe", "Web Push"],
+    images: [
+      "https://u8tnikz907.ufs.sh/f/TSSfg2WimcZSXf2ySvs29PYLqhE3in4Ffe0ZVy5w8doGWuJB",
+      "https://u8tnikz907.ufs.sh/f/TSSfg2WimcZSfCzzrdzAEJFG6rBDoHUc89fszdb4mVZ2vO3A",
+    ],
+    highlight: "Care workflow",
+    highlightLabel: "Client portals, triage, approvals, and status tracking",
+  },
+  {
     type: "Component Library",
     title: "TT UI",
     desc: "A component library I use to stop rebuilding the same interface pieces from scratch.",

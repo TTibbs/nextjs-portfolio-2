@@ -22,13 +22,13 @@ export const Projects = () => {
           {"// Selected Work"}
         </p>
         <h2 className="stagger-group font-heading text-3xl leading-tight font-extrabold tracking-tight text-white sm:text-4xl md:text-6xl">
-          <StaggeredHoverText text="A few things" startIndex={0} />
+          <StaggeredHoverText text="Recent builds" startIndex={0} />
           <br />
-          <StaggeredHoverText text="I have shipped." startIndex={13} />
+          <StaggeredHoverText text="and experiments." startIndex={14} />
         </h2>
         <p className="mt-5 max-w-2xl text-sm leading-7 text-[#8a8a8a]">
-          A mix of client work, volunteer work, and tools I built because the
-          workflow kept annoying me.
+          A mix of product ideas, client workflows, and tools I am shaping into
+          something useful.
         </p>
         <div className="mt-8 grid gap-4 md:mt-10 md:grid-cols-2 md:gap-0">
           {projects.slice(0, 4).map((project) => (
